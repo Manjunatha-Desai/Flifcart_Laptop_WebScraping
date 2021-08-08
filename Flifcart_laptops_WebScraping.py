@@ -8,7 +8,7 @@ soup =  BeautifulSoup(url,'lxml')
 #print(soup)
 
 laptops=soup.find_all('div', class_='_2kHMtA')
-#print(mobiles)
+#print(laptops)
 
 for laptop in laptops:
      mBrand = laptop.find('div', class_='_4rR01T').text
