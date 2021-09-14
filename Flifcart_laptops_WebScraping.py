@@ -12,13 +12,20 @@ soup =  BeautifulSoup(url,'lxml')
 laptops=soup.find_all('div', class_='_2kHMtA')
 #print(laptops)
 
+
 for laptop in laptops:
      lBrand = laptop.find('div', class_='_4rR01T').text
      lPrice = laptop.find('div', class_='_30jeq3 _1_WHN1').text.replace("₹","")
-     lstars = laptop.find('li', class_='rgWa7D').text
-     print(f'''Laptop Brand Name:{lBrand.strip()}'''),
-     print(f'''Price of the Laptop is :{lPrice.strip()}'''),
-     print(f'''Processor:{lstars.strip()}''')
-     print()
-     #writer.writerow(mBrand,mPrice)
-     #print(laptop)
+     lProcessor = laptop.find('li', class_='rgWa7D').text
+     #print(f'''Laptop Brand Name:{lBrand.strip()}'''),
+     #print(f'''Price of the Laptop is :{lPrice.strip()}'''),
+     #print(f'''Processor:{lProcessor.strip()}''')
+     #print()
+     laptop_dict={
+         "laptop Brand":lBrand,
+         "laptop Price":lPrice,
+         "laptop Processor":lProcessor
+         }
+  
+     print(laptop_dict)
+     
